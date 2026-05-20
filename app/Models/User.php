@@ -32,7 +32,7 @@ class User extends Authenticatable
     }
 
     /**
-     * @return HasMany<SavedSimulation, User>
+     * @return HasMany<SavedSimulation, $this>
      */
     public function savedSimulations(): HasMany
     {

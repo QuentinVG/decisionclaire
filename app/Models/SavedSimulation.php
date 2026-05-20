@@ -27,7 +27,7 @@ class SavedSimulation extends Model
     }
 
     /**
-     * @return BelongsTo<User, SavedSimulation>
+     * @return BelongsTo<User, $this>
      */
     public function user(): BelongsTo
     {
