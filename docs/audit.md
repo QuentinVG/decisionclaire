@@ -2,6 +2,15 @@
 
 Date : 2026-05-20
 
+## Audit UI - refonte du 20/05/2026
+
+- Home : l'écran d'accueil ressemblait à une liste de calculateurs. Correction : hero immersif, promesse plus forte, outil phare mis en scène, statistiques de confiance et cartes animées.
+- Pages outils : les formulaires étaient lisibles mais plats. Correction : panneau d'explication sombre, surface de formulaire premium, navigation d'outils en pills, CTA plus visibles.
+- Résultats : le verdict manquait d'impact visuel. Correction : bloc résultat sombre, chiffre principal agrandi, jauge de confiance, explication encadrée et recommandations plus scannables.
+- Dashboard : l'historique était fonctionnel mais très standard. Correction : cartes d'accès rapide, section historique plus claire et actions harmonisées.
+- Authentification : écrans Breeze trop génériques. Correction : textes en français et positionnement du compte comme optionnel.
+- Responsive : contrôle par captures headless desktop et mobile. Correction d'un hero trop diagonal qui nuisait à la lisibilité.
+
 ## Audit UX des outils - corrections du 20/05/2026
 
 - Reste à vivre : l'utilisateur devait additionner ses charges lui-même. Correction : ajout de profils de départ, raccourcis de montants courants et libellés plus concrets pour partir d'une estimation puis ajuster.

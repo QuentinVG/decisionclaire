@@ -24,6 +24,7 @@ DécisionClaire n’est pas une banque, pas une application de comptabilité, pa
 - Dashboard simple avec historique, duplication, suppression, relance et export PDF.
 - Résumé copiable pour chaque résultat.
 - Pages publiques SEO-friendly avec FAQ courte.
+- Interface retravaillée : hero immersif, cartes animées, résultats plus visuels, dashboard et écrans auth harmonisés.
 - Seeders de démonstration.
 - Tests unitaires et feature.
 - CI GitHub Actions.
