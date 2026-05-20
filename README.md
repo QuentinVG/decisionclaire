@@ -18,6 +18,7 @@ DécisionClaire n’est pas une banque, pas une application de comptabilité, pa
   - Objectif épargne
   - Abonnements inutiles
   - Comparateur de scénarios
+- Raccourcis guidés, profils prudents et choix préremplis pour éviter de devoir connaître toutes ses charges avant de commencer.
 - Authentification optionnelle via Laravel Breeze.
 - Sauvegarde des simulations pour les utilisateurs connectés.
 - Dashboard simple avec historique, duplication, suppression, relance et export PDF.

@@ -2,6 +2,16 @@
 
 Date : 2026-05-20
 
+## Audit UX des outils - corrections du 20/05/2026
+
+- Reste à vivre : l'utilisateur devait additionner ses charges lui-même. Correction : ajout de profils de départ, raccourcis de montants courants et libellés plus concrets pour partir d'une estimation puis ajuster.
+- J'achète ou pas : trop de choix demandaient de qualifier l'achat sans contexte. Correction : ajout de situations préremplies, raccourcis reste à vivre/épargne et libellés explicites pour urgence, utilité et usage.
+- Impact gros achat : le formulaire supposait que l'utilisateur savait déjà modéliser son budget et son paiement. Correction : profils de budget, montants d'achat fréquents et scénarios comptant/6 mois/12 mois.
+- Objectif épargne : l'utilisateur devait choisir seul cible, délai et capacité. Correction : objectifs types, dates rapides à 3/6/12 mois et capacités mensuelles usuelles.
+- Abonnements : la liste démarrait trop vide et rendait le tri fastidieux. Correction : packs d'abonnements préremplis, départ de zéro possible et options d'usage plus parlantes.
+- Comparateur de scénarios : les templates étaient surtout des noms, pas une aide réelle. Correction : boutons de comparaison qui remplissent deux scénarios modifiables avec coûts, risques et commentaires prudents.
+- Toutes les pages outils : ajout d'un rappel générique indiquant que les raccourcis servent à éviter de connaître tous les montants exacts avant de commencer.
+
 ## Audit critique
 
 - Produit : conforme au périmètre. Les 6 outils répondent à des décisions concrètes, sans IA, scraping, banque connectée, paiement réel ni module immobilier.

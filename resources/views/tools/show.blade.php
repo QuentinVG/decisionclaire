@@ -19,7 +19,7 @@
             <div class="space-y-6">
                 <section id="formulaire" class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
                     <h2 class="text-xl font-semibold text-slate-950">Réponds à quelques questions simples</h2>
-                    <p class="mt-2 text-sm text-slate-600">Les champs avancés sont optionnels et repliés pour garder un parcours rapide.</p>
+                    <p class="mt-2 text-sm text-slate-600">Utilise les raccourcis si tu ne connais pas les montants exacts, puis corrige seulement ce que tu sais.</p>
 
                     @if ($errors->any())
                         <div class="mt-4 rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-800">
