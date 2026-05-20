@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DécisionClaire - vitrine GitHub Pages</title>
+    <meta name="description" content="DécisionClaire est une application Laravel d’outils gratuits pour clarifier les décisions d’argent du quotidien.">
+    <style>
+        :root { color-scheme: light; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #0f172a; background: #f8fafc; }
+        body { margin: 0; }
+        a { color: inherit; }
+        .wrap { max-width: 1120px; margin: 0 auto; padding: 32px 20px; }
+        .hero { display: grid; gap: 32px; grid-template-columns: 1.05fr .95fr; align-items: center; padding: 56px 0; }
+        .eyebrow { color: #047857; font-weight: 700; font-size: 14px; }
+        h1 { font-size: clamp(36px, 6vw, 64px); line-height: 1; margin: 12px 0 16px; letter-spacing: 0; }
+        h2 { font-size: 28px; margin: 0 0 16px; }
+        p { color: #475569; line-height: 1.7; }
+        .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+        .button { display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; padding: 12px 16px; font-weight: 700; text-decoration: none; border: 1px solid #cbd5e1; }
+        .primary { background: #047857; color: white; border-color: #047857; }
+        .preview { border: 1px solid #cbd5e1; border-radius: 10px; background: white; padding: 18px; box-shadow: 0 20px 40px rgba(15, 23, 42, .08); }
+        .preview-head { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 16px; }
+        .badge { display: inline-flex; border-radius: 999px; background: #ecfdf5; color: #065f46; padding: 5px 10px; font-size: 12px; font-weight: 700; }
+        .metric { display: grid; gap: 6px; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 10px; }
+        .metric strong { font-size: 24px; }
+        .grid { display: grid; gap: 14px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .card { border: 1px solid #e2e8f0; border-radius: 8px; background: white; padding: 18px; }
+        .warning { border: 1px solid #fde68a; background: #fffbeb; border-radius: 8px; padding: 16px; color: #92400e; }
+        code { background: #e2e8f0; border-radius: 4px; padding: 2px 5px; }
+        @media (max-width: 800px) { .hero, .grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <main class="wrap">
+        <section class="hero">
+            <div>
+                <p class="eyebrow">Calcule vite, comprends clairement, décide calmement.</p>
+                <h1>DécisionClaire</h1>
+                <p>Des outils gratuits pour éviter les mauvaises décisions d’argent : achat raisonnable, reste à vivre, objectif épargne, abonnements et scénarios.</p>
+                <div class="actions">
+                    <a class="button primary" href="https://github.com/QuentinVG/decisionclaire">Voir le repo GitHub</a>
+                    <a class="button" href="#lancer">Lancer en local</a>
+                </div>
+            </div>
+            <div class="preview" aria-label="Aperçu de résultat DécisionClaire">
+                <div class="preview-head">
+                    <strong>J’achète ou pas ?</strong>
+                    <span class="badge">Outil phare</span>
+                </div>
+                <div class="metric">
+                    <span>Verdict</span>
+                    <strong>Achat limite</strong>
+                    <span>Impact sur reste à vivre : 42 %</span>
+                </div>
+                <div class="metric">
+                    <span>Confiance</span>
+                    <strong>82/100</strong>
+                    <span>Conseil : attendre 48h ou comparer une alternative.</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Fonctionnalités</h2>
+            <div class="grid">
+                <div class="card">6 outils publics sans compte obligatoire.</div>
+                <div class="card">Sauvegarde et export PDF pour utilisateurs connectés.</div>
+                <div class="card">Verdicts prudents, score de confiance et résumé copiable.</div>
+                <div class="card">Laravel, Blade, Tailwind CSS, Alpine.js.</div>
+                <div class="card">Tests PHPUnit, Pint, Larastan et CI GitHub Actions.</div>
+                <div class="card">Aucune IA, aucune banque connectée, aucun scraping.</div>
+            </div>
+        </section>
+
+        <section id="lancer" style="margin-top: 40px;">
+            <h2>Lancement local</h2>
+            <div class="card">
+                <p><code>composer install</code></p>
+                <p><code>npm install</code></p>
+                <p><code>cp .env.example .env</code></p>
+                <p><code>php artisan key:generate</code></p>
+                <p><code>php artisan migrate --seed</code></p>
+                <p><code>npm run build && php artisan serve</code></p>
+            </div>
+        </section>
+
+        <section style="margin-top: 32px;">
+            <p class="warning">GitHub Pages affiche cette vitrine statique. L’application complète nécessite un backend Laravel avec PHP et base de données.</p>
+            <p>Estimation indicative, ne remplace pas un conseil financier professionnel.</p>
+        </section>
+    </main>
+</body>
+</html>
