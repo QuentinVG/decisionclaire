@@ -1,6 +1,8 @@
 @props([
     'title' => config('app.name', 'DécisionClaire'),
     'metaDescription' => 'DécisionClaire propose des outils gratuits pour clarifier les décisions d’argent du quotidien.',
+    'canonical' => url()->current(),
+    'robots' => 'index, follow',
 ])
 
 <!DOCTYPE html>
@@ -10,6 +12,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="description" content="{{ $metaDescription }}">
+        <meta name="robots" content="{{ $robots }}">
+        <link rel="canonical" href="{{ $canonical }}">
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="fr_FR">
+        <meta property="og:title" content="{{ $title }}">
+        <meta property="og:description" content="{{ $metaDescription }}">
+        <meta property="og:url" content="{{ $canonical }}">
+        <meta name="twitter:card" content="summary">
 
         <title>{{ $title }}</title>
 

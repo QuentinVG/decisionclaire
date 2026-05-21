@@ -2,12 +2,12 @@
     <div class="dc-section py-12">
         <div class="dc-surface overflow-hidden">
             <div class="bg-slate-950 px-6 py-10 text-white sm:px-8">
-                <p class="dc-badge-dark">Outils gratuits</p>
+                <p class="dc-badge-dark">Feux tricolores de décision</p>
                 <h1 class="mt-4 max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl">
-                    Clarifier une décision d’argent sans compte obligatoire
+                    Un outil par décision d'argent, pas un tableur complet
                 </h1>
                 <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-200">
-                    Six parcours courts, des raccourcis guidés et un résultat qui explique le risque sans dramatiser.
+                    Commence par le doute réel : achat à valider, reste à vivre, objectif d'épargne, abonnements ou scénarios à comparer. Le compte vient seulement après le résultat.
                 </p>
             </div>
 
@@ -26,9 +26,9 @@
 
         <div class="mt-8 grid gap-4 md:grid-cols-3">
             @foreach ([
-                ['Simple', 'Des profils et valeurs prudentes pour commencer sans tout connaître.'],
-                ['Pédagogique', 'Un verdict, un chiffre clé, une explication et des recommandations.'],
-                ['Respectueux', 'Aucun compte bancaire, aucune IA, aucun conseil financier déguisé.'],
+                ['Décision immédiate', 'Un verdict prudent pour agir maintenant : acheter, attendre, réduire ou comparer.'],
+                ['Preuve lisible', 'Un chiffre clé, un risque, une confiance et des recommandations concrètes.'],
+                ['Respectueux', 'Aucun compte bancaire, aucun conseil financier déguisé, compte optionnel après résultat.'],
             ] as [$title, $text])
                 <div class="dc-kpi">
                     <h2 class="font-extrabold text-slate-950">{{ $title }}</h2>

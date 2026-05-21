@@ -51,9 +51,9 @@
                         </x-slot>
                     </x-dropdown>
                 @else
-                    <a href="{{ route('login') }}" class="text-sm font-semibold text-slate-700 transition hover:text-slate-950">Connexion</a>
-                    <a href="{{ route('register') }}" class="dc-button-primary px-4 py-2">
-                        Créer un compte
+                    <a href="{{ route('trust') }}" class="text-sm font-semibold text-slate-700 transition hover:text-slate-950">Confidentialité</a>
+                    <a href="{{ route('tools.purchase-decision.show') }}" class="dc-button-primary px-4 py-2">
+                        Tester un achat
                     </a>
                 @endauth
             </div>
@@ -105,8 +105,8 @@
                 </div>
             @else
                 <div class="space-y-2">
-                    <x-responsive-nav-link :href="route('login')">Connexion</x-responsive-nav-link>
-                    <x-responsive-nav-link :href="route('register')">Créer un compte</x-responsive-nav-link>
+                    <x-responsive-nav-link :href="route('trust')">Confidentialité</x-responsive-nav-link>
+                    <x-responsive-nav-link :href="route('tools.purchase-decision.show')">Tester un achat</x-responsive-nav-link>
                 </div>
             @endauth
         </div>

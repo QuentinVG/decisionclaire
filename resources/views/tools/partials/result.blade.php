@@ -5,6 +5,12 @@
         'modéré' => 'bg-sky-50 text-sky-800 border-sky-200',
         default => 'bg-emerald-50 text-emerald-800 border-emerald-200',
     };
+    $decisionLight = match ($result['risk_level'] ?? '') {
+        'risqué' => 'Feu rouge',
+        'limite' => 'Feu orange',
+        'modéré' => 'Feu orange clair',
+        default => 'Feu vert',
+    };
     $confidence = min(100, max(0, (int) ($result['confidence_score'] ?? 0)));
 @endphp
 
@@ -15,9 +21,14 @@
                 <p class="dc-badge-dark">Résultat indicatif</p>
                 <h2 class="mt-4 text-3xl font-extrabold leading-tight">{{ $result['verdict'] }}</h2>
             </div>
-            <span class="inline-flex w-fit rounded-full border px-3 py-1 text-sm font-bold {{ $riskClass }}">
-                Risque : {{ $result['risk_level'] }}
-            </span>
+            <div class="flex flex-wrap gap-2">
+                <span class="inline-flex w-fit rounded-full border px-3 py-1 text-sm font-bold {{ $riskClass }}">
+                    {{ $decisionLight }}
+                </span>
+                <span class="inline-flex w-fit rounded-full border px-3 py-1 text-sm font-bold {{ $riskClass }}">
+                    Risque : {{ $result['risk_level'] }}
+                </span>
+            </div>
         </div>
 
         <div class="mt-7 rounded-lg border border-white/20 bg-white/10 p-5 backdrop-blur">
@@ -97,11 +108,14 @@
                         </form>
                     @endif
                 @else
-                    <a href="{{ route('login') }}" class="dc-button-secondary border-emerald-300 text-emerald-900">
-                        Se connecter pour sauvegarder
+                    <a href="{{ route('register') }}" class="dc-button-secondary border-emerald-300 text-emerald-900">
+                        Créer un compte pour mes prochains résultats
                     </a>
                 @endauth
             </div>
+            @guest
+                <p class="mt-2 text-sm font-semibold text-slate-500">Copie ce résultat avant de quitter la page. La sauvegarde automatique commence après création du compte.</p>
+            @endguest
             <p x-show="copied" x-cloak class="mt-2 text-sm font-bold text-emerald-700">Résumé copié.</p>
         </div>
     </div>

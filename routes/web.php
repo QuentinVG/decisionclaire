@@ -16,6 +16,7 @@ use App\Http\Controllers\ToolController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
+Route::get('/confiance', fn () => view('trust'))->name('trust');
 Route::get('/outils', [ToolController::class, 'index'])->name('tools.index');
 
 Route::get('/outils/reste-a-vivre', [LivingBalanceController::class, 'show'])->name('tools.living-balance.show');
@@ -37,6 +38,45 @@ Route::get('/outils/comparateur-scenarios', [ScenarioComparatorController::class
 Route::post('/outils/comparateur-scenarios', [ScenarioComparatorController::class, 'calculate'])->name('tools.scenario-comparator.calculate');
 
 Route::get('/portfolio-snippet', PortfolioExportController::class)->name('portfolio.snippet');
+
+Route::get('/robots.txt', function () {
+    $url = rtrim(config('app.url'), '/');
+
+    return response(
+        "User-agent: *\n".
+        "Allow: /\n".
+        "Sitemap: {$url}/sitemap.xml\n",
+        200,
+        ['Content-Type' => 'text/plain; charset=UTF-8']
+    );
+})->name('robots');
+
+Route::get('/sitemap.xml', function () {
+    $url = e(rtrim(config('app.url'), '/'));
+    $pages = collect([
+        ['path' => '/', 'priority' => '1.0'],
+        ['path' => '/outils', 'priority' => '0.9'],
+        ['path' => '/outils/jachete-ou-pas', 'priority' => '0.9'],
+        ['path' => '/outils/reste-a-vivre', 'priority' => '0.8'],
+        ['path' => '/outils/impact-gros-achat', 'priority' => '0.8'],
+        ['path' => '/outils/objectif-epargne', 'priority' => '0.8'],
+        ['path' => '/outils/abonnements', 'priority' => '0.8'],
+        ['path' => '/outils/comparateur-scenarios', 'priority' => '0.8'],
+        ['path' => '/confiance', 'priority' => '0.8'],
+    ])->map(fn (array $page): string => "  <url>\n    <loc>{$url}{$page['path']}</loc>\n    <lastmod>2026-05-21</lastmod>\n    <priority>{$page['priority']}</priority>\n  </url>")
+        ->implode("\n");
+
+    return response(
+        <<<XML
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{$pages}
+</urlset>
+XML,
+        200,
+        ['Content-Type' => 'application/xml; charset=UTF-8']
+    );
+})->name('sitemap');
 
 Route::get('/dashboard', DashboardController::class)->middleware(['auth'])->name('dashboard');
 

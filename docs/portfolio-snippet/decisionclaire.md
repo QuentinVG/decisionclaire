@@ -1,8 +1,8 @@
 # DécisionClaire
 
-**DécisionClaire** est une application Laravel proposant des outils gratuits pour aider à prendre de meilleures décisions d’argent : achat raisonnable, reste à vivre, objectif épargne, abonnements et scénarios.
+**DécisionClaire** est une application Laravel qui donne un feu vert, orange ou rouge avant une dépense : achat important, reste à vivre, objectif épargne, abonnements et scénarios.
 
-Projet fullstack Laravel conçu comme un assistant de décision financière du quotidien, sans connexion bancaire ni compte obligatoire. L’application privilégie des verdicts clairs, des calculs transparents, des recommandations prudentes et une UX accessible.
+Projet fullstack Laravel conçu comme un assistant de décision financière ponctuelle, sans connexion bancaire ni compte obligatoire avant résultat. L’application privilégie des verdicts clairs, des calculs transparents, des recommandations prudentes et une UX accessible.
 
 ## Stack
 

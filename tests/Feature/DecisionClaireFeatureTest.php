@@ -11,6 +11,30 @@ class DecisionClaireFeatureTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function test_homepage_trust_page_and_seo_files_support_conversion(): void
+    {
+        $this->get('/')
+            ->assertOk()
+            ->assertSee('Stopper un achat impulsif')
+            ->assertSee('Sans banque connectée')
+            ->assertSee('Commencer par J’achète ou pas');
+
+        $this->get('/confiance')
+            ->assertOk()
+            ->assertSee('Confidentialité et limites')
+            ->assertSee('Aucune connexion bancaire');
+
+        $this->get('/robots.txt')
+            ->assertOk()
+            ->assertSee('Sitemap: '.rtrim(config('app.url'), '/').'/sitemap.xml');
+
+        $this->get('/sitemap.xml')
+            ->assertOk()
+            ->assertSee('/outils/jachete-ou-pas')
+            ->assertSee('/confiance')
+            ->assertSee('<urlset', false);
+    }
+
     public function test_public_tool_pages_are_accessible_and_seo_friendly(): void
     {
         foreach ([
@@ -34,6 +58,7 @@ class DecisionClaireFeatureTest extends TestCase
             ->assertOk()
             ->assertSee('Résumé à copier')
             ->assertSee('Confiance du résultat')
+            ->assertSee('Feu')
             ->assertSee('Selon les données renseignées');
     }
 
