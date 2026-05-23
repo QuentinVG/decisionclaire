@@ -10,6 +10,23 @@
         const el = this.$root.querySelector('[name=' + name + '][type=checkbox]');
         if (el) el.checked = value;
     },
+    applyExample() {
+        this.fill({
+            purchase_name: 'Téléphone',
+            price: 499,
+            available_monthly: 520,
+            available_savings: 1200,
+            minimum_savings: 600,
+            alternative_price: 380,
+            urgency: 'moyenne',
+            utility: 'forte',
+            usage_frequency: 'quotidienne',
+            usage_duration_months: 24,
+            payment_type: 'comptant',
+            planned_timing: 'maintenant'
+        });
+        this.check('cheaper_alternative', true);
+    },
     applySituation(type) {
         const map = {
             replace: { urgency: 'forte', utility: 'forte', usage_frequency: 'quotidienne', usage_duration_months: 24, planned_timing: 'maintenant' },
@@ -23,7 +40,12 @@
     @csrf
 
     <div class="rounded-md border border-emerald-200 bg-emerald-50 p-4">
-        <p class="text-sm font-semibold text-emerald-900">Raccourcis pour éviter de trop réfléchir</p>
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <p class="text-sm font-semibold text-emerald-900">Raccourcis pour éviter de trop réfléchir</p>
+            <button type="button" @click="applyExample()" class="rounded-md border border-emerald-300 bg-white px-3 py-2 text-left text-sm font-bold text-emerald-950 hover:bg-emerald-100">
+                Exemple téléphone 499 €
+            </button>
+        </div>
         <div class="mt-3 grid gap-2 sm:grid-cols-3">
             <button type="button" @click="applySituation('replace')" class="rounded-md border border-emerald-300 bg-white px-3 py-2 text-left text-sm font-semibold text-emerald-900 hover:bg-emerald-100">
                 Remplacement utile

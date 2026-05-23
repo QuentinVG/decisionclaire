@@ -12,6 +12,7 @@
         default => 'Feu vert',
     };
     $confidence = min(100, max(0, (int) ($result['confidence_score'] ?? 0)));
+    $nextAction = $result['recommendations'][0] ?? 'Relis le risque, puis décide maintenant, attendre 48 h ou réduire le montant.';
 @endphp
 
 <section id="resultat" class="dc-surface dc-lift overflow-hidden">
@@ -55,6 +56,12 @@
         <div class="rounded-lg border border-emerald-200 bg-emerald-50 p-5">
             <h3 class="font-extrabold text-emerald-950">Pourquoi ce verdict ?</h3>
             <p class="mt-2 leading-7 text-emerald-950">{{ $result['explanation'] }}</p>
+        </div>
+
+        <div class="rounded-lg border border-slate-300 bg-slate-950 p-5 text-white">
+            <p class="text-sm font-extrabold uppercase text-emerald-200">Action à faire maintenant</p>
+            <p class="mt-2 text-lg font-extrabold">{{ $nextAction }}</p>
+            <p class="mt-2 text-sm leading-6 text-slate-300">C’est l’action courte à faire avant de quitter le résultat. Le détail reste disponible plus bas si tu veux comprendre le calcul.</p>
         </div>
 
         @if (! empty($result['metrics']))

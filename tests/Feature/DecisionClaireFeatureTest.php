@@ -16,6 +16,7 @@ class DecisionClaireFeatureTest extends TestCase
         $this->get('/')
             ->assertOk()
             ->assertSee('Stopper un achat impulsif')
+            ->assertSee('Choisir en 10 secondes')
             ->assertSee('Sans banque connectée')
             ->assertSee('Commencer par J’achète ou pas');
 
@@ -48,8 +49,13 @@ class DecisionClaireFeatureTest extends TestCase
             $this->get($uri)
                 ->assertOk()
                 ->assertSee($heading)
+                ->assertSee('Repère express')
                 ->assertSee('Estimation indicative');
         }
+
+        $this->get('/outils/jachete-ou-pas')
+            ->assertOk()
+            ->assertSee('Exemple téléphone 499 €');
     }
 
     public function test_purchase_result_contains_copyable_summary_and_confidence(): void
@@ -57,6 +63,7 @@ class DecisionClaireFeatureTest extends TestCase
         $this->post('/outils/jachete-ou-pas', $this->purchasePayload())
             ->assertOk()
             ->assertSee('Résumé à copier')
+            ->assertSee('Action à faire maintenant')
             ->assertSee('Confiance du résultat')
             ->assertSee('Feu')
             ->assertSee('Selon les données renseignées');

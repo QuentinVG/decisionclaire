@@ -1,7 +1,7 @@
 <x-app-layout :title="$tool['seo_title']" :meta-description="$tool['meta']">
     <div class="dc-section py-8 sm:py-10">
         <div class="grid gap-7 lg:grid-cols-[0.88fr_1.12fr]">
-            <section class="lg:sticky lg:top-24 lg:self-start">
+            <section class="order-2 lg:order-none lg:sticky lg:top-24 lg:self-start">
                 <div class="dc-surface overflow-hidden">
                     <div class="bg-slate-950 p-6 text-white">
                         <span class="dc-badge-dark">{{ $tool['badge'] }}</span>
@@ -12,6 +12,10 @@
                         <p class="rounded-md border border-amber-200 bg-amber-50 p-3 text-sm font-semibold text-amber-950">
                             Estimation indicative, ne remplace pas un conseil financier professionnel.
                         </p>
+                        <div class="rounded-md border border-emerald-200 bg-emerald-50 p-3">
+                            <p class="text-sm font-extrabold text-emerald-950">Repère express</p>
+                            <p class="mt-1 text-sm leading-6 text-emerald-900">Saisis les champs que tu connais, lance le calcul, puis lis dans l’ordre : feu, risque, action.</p>
+                        </div>
                         <div class="grid gap-2">
                             @foreach ($tools as $otherTool)
                                 <a href="{{ route($otherTool['route']) }}" class="dc-tool-pill {{ $otherTool['key'] === $tool['key'] ? 'border-emerald-300 bg-emerald-50 text-emerald-950 shadow-sm' : 'border-slate-200 bg-white text-slate-700 hover:border-emerald-300 hover:bg-emerald-50' }}">
@@ -23,7 +27,7 @@
                 </div>
             </section>
 
-            <div class="space-y-6">
+            <div class="order-1 space-y-6 lg:order-none">
                 <section id="formulaire" class="dc-surface dc-form-shell p-5 sm:p-6">
                     <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                         <div>

@@ -18,6 +18,14 @@
                         Voir les limites
                     </a>
                 </div>
+                <div class="mt-8 max-w-2xl rounded-lg border border-white/20 bg-white/10 p-4 backdrop-blur">
+                    <p class="text-sm font-extrabold text-emerald-50">Choisir en 10 secondes</p>
+                    <div class="mt-3 grid gap-2 text-sm font-semibold text-white sm:grid-cols-3">
+                        <a href="{{ route('tools.purchase-decision.show') }}" class="rounded-md bg-white/10 px-3 py-2 transition hover:bg-white/20">Un achat à valider</a>
+                        <a href="{{ route('tools.living-balance.show') }}" class="rounded-md bg-white/10 px-3 py-2 transition hover:bg-white/20">Une fin de mois à vérifier</a>
+                        <a href="{{ route('tools.subscription-audit.show') }}" class="rounded-md bg-white/10 px-3 py-2 transition hover:bg-white/20">Des charges à réduire</a>
+                    </div>
+                </div>
             </div>
 
             <div class="relative mt-12 grid gap-3 sm:grid-cols-3 lg:max-w-4xl">
